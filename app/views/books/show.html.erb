@@ -1,9 +1,10 @@
-<div class="col-md-10 offet-md-1 mt-5">
-  <div class="roe">
+<div class="col-md-10 offset-md-1 mt-5">
+  <div class="row">
     <div class="col-md-4 mb-4">
-    <%= show_book_image(@book) %>
+      <%= show_book_image(@book) %>
     </div>
-    <div class="col-mb-8">
+    <div class="col-md-8">
+      <!-- ここにタイトルや価格、発売日 -->
       <h2><%= @book.title %></h2>
       <ul>
         <li><b><%= t '.price' %>: </b><%= t('.price_yen', price: (number_with_delimiter @book.price)) %></li>
@@ -11,10 +12,9 @@
       </ul>
     </div>
   </div>
-  
   <hr>
   <h4><%= t '.description' %></h4>
   <%= simple_format @book.description %>
   <%= link_to t('.edit'), edit_book_path(@book), class: "btn btn-primary" %>
   <%= link_to t('.return'), books_path, class: "btn btn-secondary" %>
-</div>
+</div> 
